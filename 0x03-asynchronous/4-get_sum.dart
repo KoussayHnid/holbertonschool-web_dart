@@ -3,7 +3,6 @@ import '4-util.dart';
 
 Future<double> calculateTotal() async {
   try {
-
     String userData = await fetchUserData();
     Map<String, dynamic> userMap = jsonDecode(userData);
     String userId = userMap['id'];
