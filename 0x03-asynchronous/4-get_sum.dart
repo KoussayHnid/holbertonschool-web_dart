@@ -12,15 +12,15 @@ Future<double> calculateTotal() async {
 
     double totalPrice = 0.0;
 
-    for (String product in orders) {
-      String priceData = await fetchProductPrice(product);
+    for (var productId in orders) {
+      String priceData = await fetchProductPrice(productId);
       double price = double.parse(priceData);
       totalPrice += price;
     }
 
     return totalPrice;
   } catch (e) {
-    print('error caught: $e');
-    return (-1);
+    print('Error caught: $e');
+    return -1;
   }
 }
